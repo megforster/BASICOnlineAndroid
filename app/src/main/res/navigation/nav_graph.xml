@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen2">
+    <activity
+        android:id="@+id/splashScreen2"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.SplashScreen"
+        android:label="activity_splash_screen"
+        tools:layout="@layout/activity_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen2_to_homeScreen"
+            app:destination="@id/homeScreen" />
+    </activity>
+    <activity
+        android:id="@+id/homeScreen"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.HomeScreen"
+        android:label="activity_home_screen"
+        tools:layout="@layout/activity_home_screen" >
+        <action
+            android:id="@+id/action_homeScreen_to_quizFeature"
+            app:destination="@id/quizFeature" />
+        <action
+            android:id="@+id/action_homeScreen_to_learnAboutComputerParts"
+            app:destination="@id/learnAboutComputerParts" />
+        <action
+            android:id="@+id/action_homeScreen_to_learnAboutSocialMedia"
+            app:destination="@id/learnAboutSocialMedia" />
+        <action
+            android:id="@+id/action_homeScreen_to_learnAboutInternetBrowser3"
+            app:destination="@id/learnAboutInternetBrowser" />
+        <action
+            android:id="@+id/action_homeScreen_to_learnAboutOnlineSafety"
+            app:destination="@id/learnAboutOnlineSafety" />
+        <action
+            android:id="@+id/action_homeScreen_to_searchForNearbyLibraries"
+            app:destination="@id/searchForNearbyLibraries" />
+        <action
+            android:id="@+id/action_homeScreen_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_homeScreen_to_settings"
+            app:destination="@id/settings" />
+    </activity>
+    <fragment
+        android:id="@+id/quizFeature"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.quizFeature"
+        android:label="fragment_quiz_feature"
+        tools:layout="@layout/fragment_quiz_feature" >
+        <action
+            android:id="@+id/action_quizFeature_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_quizFeature_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnAboutComputerParts"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.learnAboutComputerParts"
+        android:label="fragment_learn_about_computer_parts"
+        tools:layout="@layout/fragment_learn_about_computer_parts" >
+        <action
+            android:id="@+id/action_learnAboutComputerParts_to_computerPartsInformation"
+            app:destination="@id/computerPartsInformation" />
+        <action
+            android:id="@+id/action_learnAboutComputerParts_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_learnAboutComputerParts_to_settings2"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/computerPartsInformation"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.computerPartsInformation"
+        android:label="fragment_computer_parts_information"
+        tools:layout="@layout/fragment_computer_parts_information" >
+        <action
+            android:id="@+id/action_computerPartsInformation_to_help"
+            app:destination="@id/help" >
+            <action
+                android:id="@+id/action_action_computerPartsInformation_to_help_to_settings"
+                app:destination="@id/settings" />
+        </action>
+        <action
+            android:id="@+id/action_computerPartsInformation_to_learnAboutComputerParts"
+            app:destination="@id/learnAboutComputerParts" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnAboutSocialMedia"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.learnAboutSocialMedia"
+        android:label="fragment_learn_about_social_media"
+        tools:layout="@layout/fragment_learn_about_social_media" >
+        <action
+            android:id="@+id/action_learnAboutSocialMedia_to_socialMediaInformation"
+            app:destination="@id/socialMediaInformation" />
+        <action
+            android:id="@+id/action_learnAboutSocialMedia_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_learnAboutSocialMedia_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/socialMediaInformation"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.socialMediaInformation"
+        android:label="fragment_social_media_information"
+        tools:layout="@layout/fragment_social_media_information" >
+        <action
+            android:id="@+id/action_socialMediaInformation_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_socialMediaInformation_to_settings"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_socialMediaInformation_to_learnAboutSocialMedia"
+            app:destination="@id/learnAboutSocialMedia" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnAboutInternetBrowser"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.learnAboutInternetBrowser"
+        android:label="fragment_learn_about_internet_browser"
+        tools:layout="@layout/fragment_learn_about_internet_browser" >
+        <action
+            android:id="@+id/action_learnAboutInternetBrowser_to_internetBrowserInformation"
+            app:destination="@id/internetBrowserInformation" />
+        <action
+            android:id="@+id/action_learnAboutInternetBrowser_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_learnAboutInternetBrowser_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/internetBrowserInformation"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.internetBrowserInformation"
+        android:label="fragment_internet_browser_information"
+        tools:layout="@layout/fragment_internet_browser_information" >
+        <action
+            android:id="@+id/action_internetBrowserInformation_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_internetBrowserInformation_to_settings"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_internetBrowserInformation_to_learnAboutInternetBrowser"
+            app:destination="@id/learnAboutInternetBrowser" />
+    </fragment>
+    <fragment
+        android:id="@+id/learnAboutOnlineSafety"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.learnAboutOnlineSafety"
+        android:label="fragment_learn_about_online_safety"
+        tools:layout="@layout/fragment_learn_about_online_safety" >
+        <action
+            android:id="@+id/action_learnAboutOnlineSafety_to_onlineSafetyInformation"
+            app:destination="@id/onlineSafetyInformation" />
+        <action
+            android:id="@+id/action_learnAboutOnlineSafety_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_learnAboutOnlineSafety_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/onlineSafetyInformation"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.onlineSafetyInformation"
+        android:label="fragment_online_safety_information"
+        tools:layout="@layout/fragment_online_safety_information" >
+        <action
+            android:id="@+id/action_onlineSafetyInformation_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_onlineSafetyInformation_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchForNearbyLibraries"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.searchForNearbyLibraries"
+        android:label="fragment_search_for_nearby_libraries"
+        tools:layout="@layout/fragment_search_for_nearby_libraries" >
+        <action
+            android:id="@+id/action_searchForNearbyLibraries_to_help"
+            app:destination="@id/help" />
+        <action
+            android:id="@+id/action_searchForNearbyLibraries_to_settings"
+            app:destination="@id/settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/help"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.help"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/settings"
+        android:name="edu.quinnipiac.ser210.basiconlineandroid.settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
