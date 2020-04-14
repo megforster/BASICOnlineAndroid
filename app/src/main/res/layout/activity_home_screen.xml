@@ -4,6 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#94dcfb"
     tools:context=".HomeScreen">
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="?attr/colorPrimary"-->
+<!--            app:layout_scrollFlags="scroll|enterAlways"/>-->
+
+<!--&lt;!&ndash;        app:popupTheme="@style/AppTheme.PopupOverlay"&ndash;&gt;-->
+
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tabs"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        </com.google.android.material.tabs.TabLayout>-->
+
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <Button
+        android:id="@+id/compParts"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:onClick="onCompParts"
+        android:text="Computer Information"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <Button
+        android:id="@+id/browserInfo"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:onClick="onBrowserInfo"
+        android:text="Browser Information"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="407dp" />
+
+    <Button
+        android:id="@+id/internetInfo"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:onClick="onInternetInfo"
+        android:text="Internet Information"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="336dp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
