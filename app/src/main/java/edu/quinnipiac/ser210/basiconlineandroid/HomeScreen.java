@@ -2,11 +2,16 @@ package edu.quinnipiac.ser210.basiconlineandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ShareActionProvider;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -19,12 +24,13 @@ public class HomeScreen extends AppCompatActivity {
     private ShareActionProvider shareActionProvider;
     private SectionsPagerAdapter pagerAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         //Attach the SectionsPagerAdapter to theViewPager
 
@@ -41,7 +47,39 @@ public class HomeScreen extends AppCompatActivity {
 //        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 //        tabLayout.setupWithViewPager(pager);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_home, menu);
 
+        MenuItem menuItem = menu.findItem(R.id.share);
+        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+        setShareActionIntent("Look at the progress I am making.");
+
+        return super.onCreateOptionsMenu(menu);
+        //return true;
+    }
+
+    private void setShareActionIntent(String text) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        shareActionProvider.setShareIntent(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.help_menu:
+                Intent intent = new Intent(this, help.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
 
 
     public static class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -67,6 +105,8 @@ public class HomeScreen extends AppCompatActivity {
             return null;
         }
 
+
+
         /*@Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
@@ -85,6 +125,7 @@ public class HomeScreen extends AppCompatActivity {
 
 
     }
+
 
 
 }
