@@ -23,7 +23,7 @@ public class SplashScreen extends AppCompatActivity {
         String nameText = nameView.getText().toString();
 
         Intent intent = new Intent(this,HomeScreen.class); // go to the home screen
-        intent.putExtra(HomeScreen.PLAYER_NAME, nameText); // create and intent and then add the name to the intent
+        intent.putExtra(HomeScreen.USER_NAME, nameText); // create and intent and then add the name to the intent
         startActivity(intent);
     }
 }

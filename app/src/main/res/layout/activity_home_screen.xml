@@ -16,29 +16,17 @@
         android:textAlignment="center"
         android:textSize="30dp" />
 
-<!--        <com.google.android.material.appbar.AppBarLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">-->
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways"/>
-
-    <!--&lt;!&ndash;        app:popupTheme="@style/AppTheme.PopupOverlay"&ndash;&gt;-->
-
-    <!--        <com.google.android.material.tabs.TabLayout-->
-    <!--            android:id="@+id/tabs"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="match_parent">-->
-
-    <!--        </com.google.android.material.tabs.TabLayout>-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"/>
 
 
-<!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"

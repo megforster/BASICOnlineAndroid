@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,7 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 
 public class HomeScreen extends AppCompatActivity {
 
-    public static final String PLAYER_NAME = "welcomeName";
+    public static final String USER_NAME = "welcomeName";
 
     private ShareActionProvider shareActionProvider;
     private SectionsPagerAdapter pagerAdapter;
@@ -35,7 +34,7 @@ public class HomeScreen extends AppCompatActivity {
         //Attach the SectionsPagerAdapter to theViewPager
 
         Intent intent = getIntent(); // get the intent
-        String nameText = intent.getStringExtra(PLAYER_NAME); // get the player name
+        String nameText = intent.getStringExtra(USER_NAME); // get the player name
         TextView nameView = (TextView) findViewById(R.id.welcomeName); //welcome message for splash screen
         nameView.setText("Welcome To BASIC " + nameText);
 
@@ -72,8 +71,17 @@ public class HomeScreen extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.help_menu:
-                Intent intent = new Intent(this, help.class);
-                startActivity(intent);
+                Intent intentHelp = new Intent(this, help.class);
+                startActivity(intentHelp);
+                return true;
+            case R.id.settings_menu:
+                Intent intentSettings = new Intent(this, settings.class);
+                startActivity(intentSettings);
+                return true;
+
+            case R.id.libraries_menu:
+                Intent intentLibraries = new Intent(this, searchForNearbyLibraries.class);
+                startActivity(intentLibraries);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
