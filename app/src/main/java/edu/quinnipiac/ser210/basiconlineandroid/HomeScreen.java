@@ -2,6 +2,7 @@ package edu.quinnipiac.ser210.basiconlineandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -66,29 +67,87 @@ public class HomeScreen extends AppCompatActivity {
         shareActionProvider.setShareIntent(intent);
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+
+//        switch (item.getItemId()) {
+//            case R.id.help_menu:
+//                Intent intentHelp = new Intent(this, help.class);
+//                startActivity(intentHelp);
+//                return true;
+//            case R.id.settings_menu:
+//                Intent intentSettings = new Intent(this, settings.class);
+//                startActivity(intentSettings);
+//                return true;
+//
+//            case R.id.libraries_menu:
+//                Intent intentLibraries = new Intent(this, searchForNearbyLibraries.class);
+//                startActivity(intentLibraries);
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//
+//    }
+
         switch (item.getItemId()) {
             case R.id.help_menu:
-                Intent intentHelp = new Intent(this, help.class);
-                startActivity(intentHelp);
-                return true;
+
+                displayView(0);
+                return true ;
+
             case R.id.settings_menu:
-                Intent intentSettings = new Intent(this, settings.class);
-                startActivity(intentSettings);
+                displayView(1);
                 return true;
 
             case R.id.libraries_menu:
-                Intent intentLibraries = new Intent(this, searchForNearbyLibraries.class);
-                startActivity(intentLibraries);
+               displayView(2);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
 
     }
+    // does not work correctly trying to have go to fragments
+    private void displayView(int position) {
+        // update the main content by replacing fragments
+        Fragment fragment = null;
+        switch (position) {
+            case 0:
 
+                fragment = new help();
+
+                break;
+            case 1:
+
+                fragment = new settings();
+                break;
+
+            case 2:
+
+                fragment = new searchForNearbyLibraries();
+                break;
+
+            default:
+                break;
+        }
+
+//
+//        if (fragment != null) {
+//            FragmentManager fragmentManager = getFragmentManager();
+//            fragmentManager.beginTransaction()
+//                    .replace(R.id.frame_container, fragment).commit();
+//
+//
+//        } else {
+//            // error in creating fragment
+//            Log.e("MainActivity", "Error in creating fragment");
+//        }
+
+    }
 
     public static class SectionsPagerAdapter extends FragmentPagerAdapter {
         public SectionsPagerAdapter(FragmentManager fm) {
