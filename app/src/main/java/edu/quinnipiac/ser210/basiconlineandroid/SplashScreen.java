@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -15,7 +17,13 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     public void onEnter(View view) {
-        Intent intent = new Intent(this,HomeScreen.class);
+
+        TextView welcomeView = (TextView) findViewById(R.id.welcome); //welcome message for splash screen
+        EditText nameView = (EditText) findViewById(R.id.enterName);// get the name of the user
+        String nameText = nameView.getText().toString();
+
+        Intent intent = new Intent(this,HomeScreen.class); // go to the home screen
+        intent.putExtra(HomeScreen.PLAYER_NAME, nameText); // create and intent and then add the name to the intent
         startActivity(intent);
     }
 }

@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context=".HomeScreen">
 
+
+    <TextView
+        android:id="@+id/welcomeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30dp" />
     <!--    <com.google.android.material.appbar.AppBarLayout-->
     <!--        android:layout_width="match_parent"-->
     <!--        android:layout_height="wrap_content"-->

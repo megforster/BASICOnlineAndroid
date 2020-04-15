@@ -1,7 +1,9 @@
 package edu.quinnipiac.ser210.basiconlineandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ShareActionProvider;
@@ -11,6 +13,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 public class HomeScreen extends AppCompatActivity {
+
+    public static final String PLAYER_NAME = "welcomeName";
 
     private ShareActionProvider shareActionProvider;
     private SectionsPagerAdapter pagerAdapter;
@@ -23,6 +27,11 @@ public class HomeScreen extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
 
         //Attach the SectionsPagerAdapter to theViewPager
+
+        Intent intent = getIntent(); // get the intent
+        String nameText = intent.getStringExtra(PLAYER_NAME); // get the player name
+        TextView nameView = (TextView) findViewById(R.id.welcomeName); //welcome message for splash screen
+        nameView.setText("Welcome To BASIC " + nameText);
 
         pagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
