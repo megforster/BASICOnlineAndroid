@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class internetBrowserInformation extends Fragment {
     public void setText(String text){
         TextView textV = view.findViewById(R.id.text);
         textV.setText(text);
+        textV.setMovementMethod(new ScrollingMovementMethod());
     }
 
 
