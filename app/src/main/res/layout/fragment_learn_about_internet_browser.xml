@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ce8bfb"
+    android:orientation="vertical"
     tools:context=".learnAboutInternetBrowser">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Browser Fragment" />
+    <Button
+        android:id="@+id/browserParts"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Parts of a Browser"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/comp_browser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/comp_browser"
-        android:contentDescription="TODO" />
+    <Button
+        android:id="@+id/searchEngines"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Search Engines"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/browserTypes"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Different Browser Types"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+</LinearLayout>

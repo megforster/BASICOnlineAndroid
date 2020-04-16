@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ce8bfb"
+    android:orientation="vertical"
     tools:context=".learnAboutOnlineSafety">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Online Safety" />
+    <Button
+        android:id="@+id/passwords"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Making Strong Passwords"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/compwork"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/comp_work"
-        android:contentDescription="TODO" />
+    <Button
+        android:id="@+id/threats"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Common Threats"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/info"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Personal Information Online"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 
-</FrameLayout>
+</LinearLayout>

@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ce8bfb"
+    android:orientation="vertical"
     tools:context=".learnAboutSocialMedia">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Social Media Fragment" />
+    <Button
+        android:id="@+id/SocGroups"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Popular Social Media Groups"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/comp_media"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/comp_media"
-        android:contentDescription="TODO" />
+    <Button
+        android:id="@+id/terms"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Social Media Terminology"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/concerns"
+        android:layout_width="175dp"
+        android:layout_height="58dp"
+        android:background="#FF9F39"
+        android:text="Concerns With Social Media"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+</LinearLayout>
