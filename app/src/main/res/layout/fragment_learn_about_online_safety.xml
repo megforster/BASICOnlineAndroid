@@ -3,33 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ce8bfb"
+    android:background="#94dcfb"
     android:orientation="vertical"
     tools:context=".learnAboutOnlineSafety">
 
     <Button
         android:id="@+id/passwords"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Making Strong Passwords"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/threats"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Common Threats"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/info"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Personal Information Online"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />

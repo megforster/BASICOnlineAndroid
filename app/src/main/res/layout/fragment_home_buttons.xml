@@ -4,40 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".homeButtons"
+    android:background="#94dcfb"
     android:orientation="vertical">
 
     <Button
         android:id="@+id/compParts"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Computer Information"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/browserInfo"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Browser Information"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/onlinesafety"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Online Safety"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/socialMedia"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Social Media"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />

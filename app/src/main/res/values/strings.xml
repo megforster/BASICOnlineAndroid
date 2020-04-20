@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">BASICOnlineAndroid</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter">enter</string>
     <string name="settings">Settings</string>
@@ -10,4 +8,5 @@
     <string name="share_action">Share</string>
     <string name="settings_action">Settings</string>
     <string name="libraries_action">Find Library</string>
+    <string name="help_screen">BASIC Online Android was inspired partly by Michigan Technological University professor Charles Wallace\'s BASIC Program as well as the Developers\' senior project BASIC Online BASIC Online Android\'s goal is to educate users on topics like computer parts, social media, online threats, and internet browsers. &#xA;&#xA;The application is broken down into five main parts, each accessible from the home screen or side navigation menu. You can quiz yourself via the quiz option which will ask you true/false or fill in the blank questions. You can also learn about more about computers, internet browsers, social media, and online safety by selecting one of those options. Each information option is broken into three subtopics. &#xA;&#xA;You can also search for a nearby library that may be able to offer you more resources through an option located on the same options menu used to get to this screen.</string>
 </resources>

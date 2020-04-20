@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_basic"
+        android:textColor="#000000"
         android:textAlignment="center"
         android:textSize="40dp"
         android:textStyle="bold" />
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:hint="Please enter your name"
+        android:textColor="#000000"
         android:inputType="text" />
     <Button
         android:id="@+id/enter"

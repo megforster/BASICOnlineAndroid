@@ -73,27 +73,27 @@ public class HomeScreen extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
 
-//        switch (item.getItemId()) {
-//            case R.id.help_menu:
-//                Intent intentHelp = new Intent(this, help.class);
-//                startActivity(intentHelp);
-//                return true;
-//            case R.id.settings_menu:
-//                Intent intentSettings = new Intent(this, settings.class);
-//                startActivity(intentSettings);
-//                return true;
-//
-//            case R.id.libraries_menu:
-//                Intent intentLibraries = new Intent(this, searchForNearbyLibraries.class);
-//                startActivity(intentLibraries);
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//
-//    }
-
         switch (item.getItemId()) {
+            case R.id.help_menu:
+                Intent intentHelp = new Intent(this, help.class);
+                startActivity(intentHelp);
+                return true;
+            case R.id.settings_menu:
+                Intent intentSettings = new Intent(this, settings.class);
+                startActivity(intentSettings);
+                return true;
+
+            case R.id.libraries_menu:
+                Intent intentLibraries = new Intent(this, searchForNearbyLibraries.class);
+                startActivity(intentLibraries);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
+
+        /*switch (item.getItemId()) {
             case R.id.help_menu:
 
                 displayView(0);
@@ -108,44 +108,7 @@ public class HomeScreen extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-        }
-
-    }
-    // does not work correctly trying to have go to fragments
-    private void displayView(int position) {
-        // update the main content by replacing fragments
-        Fragment fragment = null;
-        switch (position) {
-            case 0:
-
-                fragment = new help();
-
-                break;
-            case 1:
-
-                fragment = new settings();
-                break;
-
-            case 2:
-
-                fragment = new searchForNearbyLibraries();
-                break;
-
-            default:
-                break;
-        }
-
-//
-//        if (fragment != null) {
-//            FragmentManager fragmentManager = getFragmentManager();
-//            fragmentManager.beginTransaction()
-//                    .replace(R.id.frame_container, fragment).commit();
-//
-//
-//        } else {
-//            // error in creating fragment
-//            Log.e("MainActivity", "Error in creating fragment");
-//        }
+        }*/
 
     }
 
@@ -171,26 +134,6 @@ public class HomeScreen extends AppCompatActivity {
             }
             return null;
         }
-
-
-
-        /*@Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return getResources().getText(R.string.home_tab); // example for tabs pizza to
-                case 1:
-                    return getResources().getText(R.string.);
-                case 2:
-                    return getResources().getText(R.string.);
-                case 3:
-                    return getResources().getText(R.string.);
-            }
-            return null;
-
-        }*/
-
-
     }
 
 

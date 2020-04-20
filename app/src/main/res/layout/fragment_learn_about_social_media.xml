@@ -3,33 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ce8bfb"
+    android:background="#94dcfb"
     android:orientation="vertical"
     tools:context=".learnAboutSocialMedia">
 
     <Button
         android:id="@+id/SocGroups"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Popular Social Media Groups"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/terms"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Social Media Terminology"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/concerns"
-        android:layout_width="175dp"
-        android:layout_height="58dp"
-        android:background="#FF9F39"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
         android:text="Concerns With Social Media"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
