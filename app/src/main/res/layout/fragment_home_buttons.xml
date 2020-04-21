@@ -8,6 +8,15 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/quizScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
+        android:text="Test My Knowledge"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <Button
         android:id="@+id/compParts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

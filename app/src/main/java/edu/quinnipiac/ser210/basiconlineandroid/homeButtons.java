@@ -129,6 +129,31 @@ public class homeButtons extends Fragment {
             }
         });
 
+        Button quiz = (Button) view.findViewById(R.id.quizScreen);
+
+        quiz.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction trans = getFragmentManager()
+                        .beginTransaction();
+                /*
+                 * IMPORTANT: We use the "root frame" defined in
+                 * "root_fragment.xml" as the reference to replace fragment
+                 */
+                trans.replace(R.id.root_frame, new quizFeature());
+
+                /*
+                 * IMPORTANT: The following lines allow us to add the fragment
+                 * to the stack and return to it later, by pressing back
+                 */
+                trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                trans.addToBackStack(null);
+
+                trans.commit();
+            }
+        });
+
 
 
 
