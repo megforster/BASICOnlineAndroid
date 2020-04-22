@@ -34,5 +34,14 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/basic_logo_image"
+        android:layout_width="609dp"
+        android:layout_height="272dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/online_safety" />
+
 
 </LinearLayout>

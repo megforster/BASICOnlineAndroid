@@ -34,4 +34,12 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/basic_logo_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|fill|center_vertical"
+        android:contentDescription="TODO"
+        android:src="@drawable/browser_infromation" />
+
 </LinearLayout>

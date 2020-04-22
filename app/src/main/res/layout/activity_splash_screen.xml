@@ -16,6 +16,7 @@
         android:textColor="#000000"
         android:textAlignment="center"
         android:textSize="40dp"
+        android:layout_gravity="center"
         android:textStyle="bold" />
 
 
@@ -24,7 +25,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
+        android:layout_gravity="center"
         android:hint="Please enter your name"
+        android:textColorHint="#000000"
         android:textColor="#000000"
         android:inputType="text" />
     <Button
@@ -32,8 +35,9 @@
         android:layout_width="175dp"
         android:layout_height="58dp"
         android:background="#FF9F39"
+        android:layout_gravity="center"
         android:text="@string/enter"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold"
         android:onClick="onEnter"/>
 
@@ -41,6 +45,7 @@
         android:id="@+id/basic_logo_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:src="@drawable/basic_logo"
         android:contentDescription="TODO" />
 
