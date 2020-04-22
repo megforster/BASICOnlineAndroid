@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 public class RootFragment extends Fragment {
 
     private static final String TAG = "RootFragment";
+    //NavController navController = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
