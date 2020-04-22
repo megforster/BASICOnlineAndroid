@@ -8,10 +8,13 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ShareActionProvider;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.core.view.MenuItemCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -20,7 +23,7 @@ import androidx.viewpager.widget.ViewPager;
 public class HomeScreen extends AppCompatActivity {
 
     public static final String USER_NAME = "welcomeName";
-
+    private DrawerLayout nav_drawer;
     private ShareActionProvider shareActionProvider;
     private SectionsPagerAdapter pagerAdapter;
 
@@ -33,6 +36,12 @@ public class HomeScreen extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //Attach the SectionsPagerAdapter to theViewPager
+
+        //Creating button to click action bar from Toolbar
+        nav_drawer = findViewById(R.id.home_drawer_layout);
+        ActionBarDrawerToggle toggleNav = new ActionBarDrawerToggle(this,nav_drawer, toolbar,R.string.nav_open_drawer, R.string.nav_close_drawer);
+        nav_drawer.addDrawerListener(toggleNav);
+        toggleNav.syncState();
 
         Intent intent = getIntent(); // get the intent
         String nameText = intent.getStringExtra(USER_NAME); // get the player name
@@ -67,6 +76,14 @@ public class HomeScreen extends AppCompatActivity {
         shareActionProvider.setShareIntent(intent);
     }
 
+    @Override
+    public void onBackPressed(){
+       if(nav_drawer.isDrawerOpen(GravityCompat.START)){
+           nav_drawer.closeDrawer(GravityCompat.START);
+       }else {
+           super.onBackPressed();
+       }
+    }
 
 
     @Override
