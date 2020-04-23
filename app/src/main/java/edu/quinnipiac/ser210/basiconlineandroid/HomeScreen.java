@@ -1,11 +1,13 @@
 package edu.quinnipiac.ser210.basiconlineandroid;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -146,11 +148,12 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 //Favorites not yet implemented
                 break;
             case R.id.nav_library:
-                // Need to have R.id.fragment container of some kind
-               // getSupportFragmentManager().beginTransaction().replace(R.id??????,new searchForNearbyLibraries()).commit();
+                // Fragment managerto begin transaction to go to the libraries fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new searchForNearbyLibraries()).commit();
+
                 break;
             case R.id.nav_settings:
-                //getSupportFragmentManager().beginTransaction().replace(R.id??????,new settings()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new settings()).commit();
                 break;
             case R.id.nav_help:
                 //Intent to pass to access Help screen from the navside menu
@@ -158,10 +161,13 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 startActivity(intentHelp);
                 break;
             case R.id.nav_share:
+                Toast.makeText(this, "Share with Friends",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_messgae:
+                Toast.makeText(this, "Send a Message",Toast.LENGTH_SHORT).show();
                 break;
         }
+        nav_drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
