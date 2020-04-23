@@ -139,6 +139,8 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         switch(menuItem.getItemId()){
             case R.id.nav_homescreen:
                 //Intent to get home screen
+                Intent intentHome = new Intent(this, HomeScreen.class); // go to the Help Screen
+                startActivity(intentHome);
                 break;
             case R.id.nav_favorites:
                 //Favorites not yet implemented
@@ -152,8 +154,8 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 break;
             case R.id.nav_help:
                 //Intent to pass to access Help screen from the navside menu
-                Intent intent = new Intent(this, help.class); // go to the Help Screen
-                startActivity(intent);
+                Intent intentHelp = new Intent(this, help.class); // go to the Help Screen
+                startActivity(intentHelp);
                 break;
             case R.id.nav_share:
                 break;
