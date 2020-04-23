@@ -151,7 +151,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 //getSupportFragmentManager().beginTransaction().replace(R.id??????,new settings()).commit();
                 break;
             case R.id.nav_help:
-                //Intent to get the Help activity
+                //Intent to pass to access Help screen from the navside menu
                 Intent intent = new Intent(this, help.class); // go to the Help Screen
                 startActivity(intent);
                 break;
