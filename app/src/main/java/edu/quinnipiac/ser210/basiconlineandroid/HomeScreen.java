@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,10 +51,11 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         nav_drawer.addDrawerListener(toggleNav);
         toggleNav.syncState();
 
-        Intent intent = getIntent(); // get the intent
-        String nameText = intent.getStringExtra(USER_NAME); // get the player name
-        TextView nameView = (TextView) findViewById(R.id.welcomeName); //welcome message for splash screen
-        nameView.setText("Welcome To BASIC " + nameText);
+        getUserName();
+//        Intent intent = getIntent(); // get the intent
+//        String nameText = intent.getStringExtra(USER_NAME); // get the player name
+//        TextView nameView = (TextView) findViewById(R.id.welcomeName); //welcome message for splash screen
+//        nameView.setText("Welcome To BASIC " + nameText);
 
         pagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
@@ -63,6 +65,16 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 //        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 //        tabLayout.setupWithViewPager(pager);
     }
+
+    public void getUserName(){
+        Intent intent = getIntent(); // get the intent
+        String nameText = intent.getStringExtra(USER_NAME); // get the player name
+        TextView nameView = (TextView) findViewById(R.id.welcomeName); //welcome message for splash screen
+        nameView.setText("Welcome To BASIC " + nameText);
+
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -142,6 +154,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
             case R.id.nav_homescreen:
                 //Intent to get home screen
                 Intent intentHome = new Intent(this, HomeScreen.class); // go to the Help Screen
+
                 startActivity(intentHome);
                 break;
             case R.id.nav_favorites:
