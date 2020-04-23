@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_bg"
         android:text="Learn About Computers"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <Button
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_bg"
         android:text="Learn About The Differences Between Desktops and Laptops"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <Button
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_bg"
         android:text="Learn About Computer Applications"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <ImageView

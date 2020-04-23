@@ -6,13 +6,16 @@
     android:background="#94dcfb"
     tools:context=".computerPartsInformation">
 
-<TextView
-    android:id="@+id/text"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    android:textColor="#000000"
-    android:textSize="30sp"
-    android:text="Hello"/>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:scrollbars="vertical"
+        android:text="Hello"
+        android:textColor="#000000"
+        android:textSize="30sp" />
 
 </FrameLayout>

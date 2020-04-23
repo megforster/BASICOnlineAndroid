@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_bg"
         android:text="Popular Social Media Groups"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <Button
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_bg"
         android:text="Social Media Terminology"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <Button
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/my_button_bg"
         android:text="Concerns With Social Media"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <ImageView
@@ -39,7 +39,7 @@
         android:layout_width="350dp"
         android:layout_height="366dp"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="TODO"
         android:src="@drawable/social_media" />
 
