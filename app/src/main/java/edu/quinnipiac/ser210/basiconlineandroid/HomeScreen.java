@@ -20,7 +20,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-public class HomeScreen extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class HomeScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String USER_NAME = "welcomeName";
     private DrawerLayout nav_drawer;
@@ -35,10 +37,13 @@ public class HomeScreen extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Attach the SectionsPagerAdapter to theViewPager
+        //Navigation for navigation side menu
+        nav_drawer = findViewById(R.id.home_drawer_layout);
+        NavigationView navView = findViewById(R.id.nav_drawer_view);
+        navView.setNavigationItemSelectedListener(this);
+
 
         //Creating button to click action bar from Toolbar
-        nav_drawer = findViewById(R.id.home_drawer_layout);
         ActionBarDrawerToggle toggleNav = new ActionBarDrawerToggle(this,nav_drawer, toolbar,R.string.nav_open_drawer, R.string.nav_close_drawer);
         nav_drawer.addDrawerListener(toggleNav);
         toggleNav.syncState();
@@ -127,6 +132,35 @@ public class HomeScreen extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }*/
 
+    }
+    //Method to allow button action clicks on the navigation side menu
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch(menuItem.getItemId()){
+            case R.id.nav_homescreen:
+                //Intent to get home screen
+                break;
+            case R.id.nav_favorites:
+                //Favorites not yet implemented
+                break;
+            case R.id.nav_library:
+                // Need to have R.id.fragment container of some kind
+               // getSupportFragmentManager().beginTransaction().replace(R.id??????,new searchForNearbyLibraries()).commit();
+                break;
+            case R.id.nav_settings:
+                //getSupportFragmentManager().beginTransaction().replace(R.id??????,new settings()).commit();
+                break;
+            case R.id.nav_help:
+                //Intent to get the Help activity
+                Intent intent = new Intent(this, help.class); // go to the Help Screen
+                startActivity(intent);
+                break;
+            case R.id.nav_share:
+                break;
+            case R.id.nav_messgae:
+                break;
+        }
+        return true;
     }
 
     public static class SectionsPagerAdapter extends FragmentPagerAdapter {
