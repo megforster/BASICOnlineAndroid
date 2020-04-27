@@ -9,9 +9,14 @@ import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.location.LocationListener;
@@ -28,6 +33,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
 
 public class findLibrary extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
@@ -150,6 +158,44 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    public void onClick(View v) throws IOException {
+        switch(v.getId()){
+            case R.id.search_lib:
+                EditText addressField = (EditText) findViewById(R.id.location_search);
+                String address = addressField.getText().toString();
+
+                List<Address> addressList = null;
+                MarkerOptions userMarkerOptions = new MarkerOptions();
+
+                if(!TextUtils.isEmpty(address)){
+                    Geocoder geocoder = new Geocoder(this);
+                    addressList = geocoder.getFromLocationName(address, 6);
+                    if (addressList != null) {
+                        for (int i = 0; i < addressList.size(); i++) {
+                            Address userAddress = addressList.get(i);
+                            LatLng latLng = new LatLng(userAddress.getLatitude(), userAddress.getLongitude());
+                            userMarkerOptions.position(latLng);
+                            //markerOptions.title(address); //Doesn't like this line
+                            userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+                            mMap.addMarker(userMarkerOptions);
+                            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+
+                        }
+                    }else{
+                        Toast.makeText(this, "Location not found", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else{
+                    Toast.makeText(this, "Please insert an address or location name", Toast.LENGTH_SHORT).show();
+                }
+
+
+                break;
+        }
 
     }
 }
