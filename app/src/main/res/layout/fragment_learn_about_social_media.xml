@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#94dcfb"
+    android:orientation="vertical"
+    tools:context=".learnAboutSocialMedia">
+
+    <Button
+        android:id="@+id/SocGroups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
+        android:text="Popular Social Media Groups"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/terms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
+        android:text="Social Media Terminology"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/concerns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_button_bg"
+        android:text="Concerns With Social Media"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/basic_logo_image"
+        android:layout_width="350dp"
+        android:layout_height="366dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/social_media" />
+
+</LinearLayout>

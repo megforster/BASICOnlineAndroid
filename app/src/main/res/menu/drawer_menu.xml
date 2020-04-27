@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_homescreen"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_home" />
+
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/nav_favorites" />
+
+        <item
+            android:id="@+id/nav_library"
+            android:icon="@drawable/ic_find_library"
+            android:title="@string/nav_library" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/nav_settings" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help"
+            android:title="@string/nav_help" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="@string/nav_share" />
+            <item
+                android:id="@+id/nav_messgae"
+                android:icon="@drawable/ic_text_message"
+                android:title="@string/nav_message" />
+        </menu>
+    </item>
+
+</menu>

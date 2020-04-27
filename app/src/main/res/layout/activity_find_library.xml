@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+        
+       <EditText
+           android:id="@+id/location_search"
+           android:layout_width="314dp"
+           android:layout_height="50dp"
+           android:layout_alignParentStart="true"
+           android:layout_alignParentTop="true"
+           android:textColorHint="@android:color/darker_gray"
+           android:ems="10"
+           android:hint="Search for address/place"/>
+
+       <ImageButton
+           android:id="@+id/search_lib"
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           style="@style/Widget.AppCompat.Button.Borderless"
+           android:adjustViewBounds="true"
+           android:scaleType="fitXY"
+           android:layout_alignParentEnd="true"
+           android:layout_alignParentTop="true"
+           android:onClick="onClick"
+           android:src="@drawable/search_icon"
+           />
+
+
+   </RelativeLayout>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        tools:context=".findLibrary" />
+
+    <RelativeLayout
+        android:id="@+id/second_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/seach_for_libraries"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/library_icon"
+            android:onClick="onClick"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="67dp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+
+
+
+

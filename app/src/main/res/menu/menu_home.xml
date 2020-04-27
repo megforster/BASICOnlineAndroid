@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<!--    <item android:id="@+id/settings"-->
+<!--        android:title="@string/settings"-->
+<!--        android:orderInCategory="2"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"/>-->
+
+
+    <item android:id="@+id/share"
+        android:title="@string/share_action"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"/>
+
+    <item android:id="@+id/help_menu"
+        android:title="@string/help_menu"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"/>
+
+    <item android:id="@+id/settings_menu"
+        android:title="@string/settings_action"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"/>
+
+    <item android:id="@+id/libraries_menu"
+        android:title="@string/libraries_action"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"/>
+
+</menu>
