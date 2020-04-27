@@ -120,7 +120,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 return true;
 
             case R.id.libraries_menu:
-                Intent intentLibraries = new Intent(this, searchForNearbyLibraries.class);
+                Intent intentLibraries = new Intent(this, findLibrary.class);
                 startActivity(intentLibraries);
                 return true;
             default:
@@ -161,10 +161,11 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 //Favorites not yet implemented
                 break;
             case R.id.nav_library:
-                // Fragment managerto begin transaction to go to the libraries fragment
-                getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new searchForNearbyLibraries()).commit();
-
+                Intent intentLibrary = new Intent(this, findLibrary.class);
+                startActivity(intentLibrary);
                 break;
+                /*// Fragment managerto begin transaction to go to the libraries fragment
+                getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new searchForNearbyLibraries()).commit();*/
             case R.id.nav_settings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new settings()).commit();
                 break;
