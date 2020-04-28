@@ -192,6 +192,8 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
                                 mMap.addMarker(userMarkerOptions);
                                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                                 mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+                                latitude = userAddress.getLatitude();
+                                longitude = userAddress.getLongitude();
 
                             }
                         } else {
