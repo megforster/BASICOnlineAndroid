@@ -1,6 +1,7 @@
 package edu.quinnipiac.ser210.basiconlineandroid;
 
 import androidx.test.espresso.action.ViewActions;
+import androidx.test.rule.ActivityTestRule;
 //import androidx.test.rule.ActivityTestRule;
 
 import org.junit.Rule;
@@ -14,9 +15,9 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 public class UserNameSplashScreenTest {
 
-//    @Rule
-//    public ActivityTestRule <SplashScreen> splashScreenTestRule =
-//           new ActivityTestRule<>(SplashScreen.class);
+    @Rule
+    public ActivityTestRule <SplashScreen> splashScreenTestRule =
+           new ActivityTestRule<>(SplashScreen.class);
 
 
     @Test
@@ -28,7 +29,7 @@ public class UserNameSplashScreenTest {
 
         onView(withId(R.id.enterName)).check(matches(withText(expected)));
 
-        //Espresso.onView(withText("Welcome to BASIC")).perform(click());
+
 
     }
 
