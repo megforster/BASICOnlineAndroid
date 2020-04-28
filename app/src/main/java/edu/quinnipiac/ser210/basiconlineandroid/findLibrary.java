@@ -8,13 +8,13 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -45,6 +45,8 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
     private Location lastLocation;
     private Marker currentUserLocationMarker;
     private static final int Request_User_Location_Code = 99;
+    private double latitude, longitude;
+    private int proximityRadius = 10000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +119,10 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
 
     @Override
     public void onLocationChanged(Location location) {
+
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
         lastLocation = location;
 
         if(currentUserLocationMarker!=null){
@@ -161,7 +167,12 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
 
     }
 
-    public void onClick(View v) throws IOException {
+    public void onClick(View v){
+
+        String library = "library";
+        Object transferData[] = new Object[2];
+        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+
         switch(v.getId()){
             case R.id.search_lib:
                 EditText addressField = (EditText) findViewById(R.id.location_search);
@@ -172,30 +183,61 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
 
                 if(!TextUtils.isEmpty(address)){
                     Geocoder geocoder = new Geocoder(this);
-                    addressList = geocoder.getFromLocationName(address, 6);
-                    if (addressList != null) {
-                        for (int i = 0; i < addressList.size(); i++) {
-                            Address userAddress = addressList.get(i);
-                            LatLng latLng = new LatLng(userAddress.getLatitude(), userAddress.getLongitude());
-                            userMarkerOptions.position(latLng);
-                            //markerOptions.title(address); //Doesn't like this line
-                            userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
-                            mMap.addMarker(userMarkerOptions);
-                            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+                    try {
+                        addressList = geocoder.getFromLocationName(address, 6);
+                        if (addressList != null) {
+                            for (int i = 0; i < addressList.size(); i++) {
+                                Address userAddress = addressList.get(i);
+                                LatLng latLng = new LatLng(userAddress.getLatitude(), userAddress.getLongitude());
+                                userMarkerOptions.position(latLng);
+                                //markerOptions.title(address); //Doesn't like this line
+                                userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+                                mMap.addMarker(userMarkerOptions);
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
 
+                            }
+                        } else {
+                            Toast.makeText(this, "Location not found", Toast.LENGTH_SHORT).show();
                         }
-                    }else{
-                        Toast.makeText(this, "Location not found", Toast.LENGTH_SHORT).show();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
 
                 } else{
                     Toast.makeText(this, "Please insert an address or location name", Toast.LENGTH_SHORT).show();
                 }
-
-
                 break;
+
+            case R.id.seach_for_libraries:
+                mMap.clear();
+                String url = getUrl(latitude, longitude, library);
+                transferData[0] = mMap;
+                transferData[1] = url;
+
+                getNearbyPlaces.execute(transferData);
+                Toast.makeText(this, "Searching for nearby libraries....", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Showing nearby libraries....", Toast.LENGTH_SHORT).show();
+                break;
+
         }
+
+    }
+
+    private String getUrl(double latitude, double longitude, String nearByPlace){
+        StringBuilder googleURL = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googleURL.append("location=" + latitude+","+longitude);
+        googleURL.append("&radius="+proximityRadius);
+        googleURL.append("&keyword="+nearByPlace); //type
+        String serverKey = getString(R.string.server);
+        String apiKey = getString(R.string.api);
+        googleURL.append("&key="+serverKey);
+        googleURL.append("&sensor=true");
+
+        Log.d("findLibrary Activity", "url = "+googleURL.toString());
+
+        return googleURL.toString();
 
     }
 }
