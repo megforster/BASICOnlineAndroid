@@ -3,14 +3,12 @@ package edu.quinnipiac.ser210.basiconlineandroid;
 
 import android.os.Bundle;
 
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 
 /**
  * A simple {@link Fragment} subclass.

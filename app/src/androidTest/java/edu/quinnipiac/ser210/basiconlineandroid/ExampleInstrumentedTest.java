@@ -25,3 +25,4 @@ public class ExampleInstrumentedTest {
         assertEquals("edu.quinnipiac.ser210.basiconlineandroid", appContext.getPackageName());
     }
 }
+

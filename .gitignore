@@ -8,8 +8,15 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
+<<<<<<< HEAD
 api.xml
+=======
+>>>>>>> e6ab7d7c6290bad5f8326eee5914c702bdd51bb4
 /build
 /captures
 .externalNativeBuild
 .cxx
+<<<<<<< HEAD
+=======
+api.xml
+>>>>>>> e6ab7d7c6290bad5f8326eee5914c702bdd51bb4

@@ -16,7 +16,6 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.junit.Assert.*;
 
 public class UserNameSplashScreenTest {
 
@@ -33,8 +32,6 @@ public class UserNameSplashScreenTest {
         String expected = "Alexandra";
 
         onView(withId(R.id.enterName)).check(matches(withText(expected)));
-
-        //Espresso.onView(withText("Welcome to BASIC")).perform(click());
 
     }
 

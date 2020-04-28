@@ -17,7 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e6ab7d7c6290bad5f8326eee5914c702bdd51bb4
 }
 
 dependencies {
@@ -29,7 +32,10 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
     implementation 'com.google.android.gms:play-services-location:16.0.0'
+<<<<<<< HEAD
     implementation 'com.google.android.libraries.places:places:2.2.0'
+=======
+>>>>>>> e6ab7d7c6290bad5f8326eee5914c702bdd51bb4
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
