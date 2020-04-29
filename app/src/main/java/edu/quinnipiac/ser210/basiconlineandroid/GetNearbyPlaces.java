@@ -1,6 +1,8 @@
 package edu.quinnipiac.ser210.basiconlineandroid;
 
 import android.os.AsyncTask;
+import android.util.Log;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -27,7 +29,7 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        Log.i("doInBackground", googlePlaceData);
         return googlePlaceData;
     }
 
@@ -39,9 +41,11 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
         DisplayNearbyPlaces(nearbyPlacesList);
     }
 
-    private void DisplayNearbyPlaces(List<HashMap<String, String>> nearbyPlacesList){
+    private void DisplayNearbyPlaces(List<HashMap<String,String>> nearbyPlacesList){
+        Log.i("GetNearbyPlaces", "Starting DisplayNearbyPlaces");
+        Log.i("GetNearbyPlaces", "nearbyPlacesList length: "+nearbyPlacesList.size());
         for(int i = 0; i<nearbyPlacesList.size();i++){
-            MarkerOptions markerOptions = new MarkerOptions();
+            Log.i("GetNearbyPlaces", "Inside for loop of DisplayNearbyPlaces");
             HashMap<String, String> googleNearbyPlace = nearbyPlacesList.get(i);
             String placeName = googleNearbyPlace.get("place_name");
            String vicinity = googleNearbyPlace.get("vicinity");
@@ -49,6 +53,7 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
             double lng = Double.parseDouble(googleNearbyPlace.get("lng"));
 
             LatLng latLng = new LatLng(lat, lng);
+            MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.position(latLng);
             //markerOptions.title(nameOfPlace+" : "+vicinity); //Doesn't like this line
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));

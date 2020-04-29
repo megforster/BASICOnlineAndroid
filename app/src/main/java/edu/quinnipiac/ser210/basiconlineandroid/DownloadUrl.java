@@ -1,5 +1,7 @@
 package edu.quinnipiac.ser210.basiconlineandroid;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,6 +29,7 @@ public class DownloadUrl {
             String line = "";
 
             while((line = bufferedReader.readLine())!=null){
+                //Log.i("redUrl", "line: "+ line);
                 stringBuffer.append(line);
             }
             Data = stringBuffer.toString();

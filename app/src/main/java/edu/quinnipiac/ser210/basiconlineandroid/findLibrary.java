@@ -170,6 +170,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         String library = "library";
         Object transferData[] = new Object[2];
         GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+
         switch(v.getId()){
             case R.id.search_lib:
                 EditText addressField = (EditText) findViewById(R.id.location_search);
