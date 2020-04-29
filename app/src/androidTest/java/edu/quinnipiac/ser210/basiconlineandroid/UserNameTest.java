@@ -16,23 +16,29 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.junit.Assert.*;
 
-public class UserNameSplashScreenTest {
+//@RunWith(AndroidJUnit4.class)
 
-    @Rule
-    public ActivityTestRule <SplashScreen> splashScreenTestRule =
-            new ActivityTestRule<>(SplashScreen.class);
-
-
-    @Test
-    public void onEnter() {
-
-        onView(withId(R.id.enterName)).perform(typeText("Alexandra"), ViewActions.closeSoftKeyboard());
-
-        String expected = "Alexandra";
-
-        onView(withId(R.id.enterName)).check(matches(withText(expected)));
-
-    }
-
-}
+//public class UserNameTest {
+//
+//    @Rule
+//    public ActivityTestRule <HomeScreen> homeScreenTestRule =
+//            new ActivityTestRule<>(HomeScreen.class);
+//
+//
+//
+//    @Test
+//    public void getUserName() {
+//       // onView(withId(R.id.welcomeName)).perform(Type)
+//
+//        //onView(withId(R.id.enterName)).perform(typeText("Ellsworth"), ViewActions.closeSoftKeyboard());
+//
+//
+//        Espresso.onView(withText("Welcome to BASIC")).perform(click());
+//        String expected = "Welcome to BASIC Alexandra";
+//
+//        onView(withId(R.id.welcomeName)).check(matches(withText(expected)));
+//
+//    }
+//}

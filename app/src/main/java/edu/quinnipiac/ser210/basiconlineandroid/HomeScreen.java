@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,7 +43,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 
 
         //Creating button to click action bar from Toolbar
-        ActionBarDrawerToggle toggleNav = new ActionBarDrawerToggle(this,nav_drawer, toolbar, R.string.nav_open_drawer, R.string.nav_close_drawer);
+        ActionBarDrawerToggle toggleNav = new ActionBarDrawerToggle(this,nav_drawer, toolbar,R.string.nav_open_drawer, R.string.nav_close_drawer);
         nav_drawer.addDrawerListener(toggleNav);
         toggleNav.syncState();
 

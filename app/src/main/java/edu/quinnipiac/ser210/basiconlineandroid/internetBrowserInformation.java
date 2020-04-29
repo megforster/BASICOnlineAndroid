@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-
 public class internetBrowserInformation extends Fragment {
 
     View view;
