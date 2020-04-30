@@ -27,6 +27,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     private DrawerLayout nav_drawer;
     private ShareActionProvider shareActionProvider;
     private SectionsPagerAdapter pagerAdapter;
+    //RootFragment rootFragment;
 
 
     @Override
@@ -60,6 +61,8 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 //        //Attach the ViewPager to the TabLayout
 //        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 //        tabLayout.setupWithViewPager(pager);
+
+        //rootFragment =  new RootFragment();
     }
 
     public void getUserName(){
@@ -112,7 +115,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 return true;
             case R.id.settings_menu:
                 Intent intentSettings = new Intent(this, settings.class);
-                startActivity(intentSettings);
+                startActivityForResult(intentSettings, 0);
                 return true;
 
             case R.id.libraries_menu:
@@ -124,39 +127,31 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         }
 
 
-
-
     }
+
+    /*protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==0){
+            rootFragment.getView().setBackgroundResource(R.color.white);
+        }
+    }*/
+
     //Method to allow button action clicks on the navigation side menu
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch(menuItem.getItemId()){
             case R.id.nav_homescreen:
                 //Intent to get home screen
-                Intent intentHome = new Intent(this, HomeScreen.class); // go to the Home Screen
+                Intent intentHome = new Intent(this, HomeScreen.class); // go to the Help Screen
 
                 startActivity(intentHome);
                 break;
-
-            case R.id.nav_quiz:
-                //Intent to get home screen
-                Intent intentQuiz = new Intent(this, QuizActivity.class); // go to the Quiz// Screen
-                startActivity(intentQuiz);
-                break;
-
-                case R.id.nav_favorites:
+            case R.id.nav_favorites:
                 //Favorites not yet implemented
                 break;
-
-
             case R.id.nav_library:
                 Intent intentLibrary = new Intent(this, findLibrary.class);
                 startActivity(intentLibrary);
-                break;
-                /*// Fragment managerto begin transaction to go to the libraries fragment
-                getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new searchForNearbyLibraries()).commit();*/
-            case R.id.nav_settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new settings()).commit();
                 break;
             case R.id.nav_help:
                 //Intent to pass to access Help screen from the navside menu
@@ -164,10 +159,8 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 startActivity(intentHelp);
                 break;
             case R.id.nav_share:
-                Toast.makeText(this, "Share with Friends",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_messgae:
-                Toast.makeText(this, "Send a Message",Toast.LENGTH_SHORT).show();
+                shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+                setShareActionIntent("Look at the progress I am making.");
                 break;
         }
         nav_drawer.closeDrawer(GravityCompat.START);

@@ -41,7 +41,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
     private GoogleMap mMap;
     private GoogleApiClient googleApiClient;
     private LocationRequest locationRequest;
-    private Location lastLocation;
+    private Location lastLocation, startingLocation;
     private Marker currentUserLocationMarker;
     private static final int Request_User_Location_Code = 99;
     private double latitude, longitude;
@@ -51,9 +51,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_library);
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-            checkUserLocationPermission();
-        }
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -64,14 +62,26 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        /*LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
+
+        /*mMap.setMyLocationEnabled(true);
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             buildGoogleApiClient();
+        }*/
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)
+                    == PackageManager.PERMISSION_GRANTED) {
+                //Location Permission already granted
+                buildGoogleApiClient();
+                mMap.setMyLocationEnabled(true);
+            } else {
+                //Request Location Permission
+                checkUserLocationPermission();
+            }
+        }
+        else {
+            buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
-
         }
     }
 
@@ -130,7 +140,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        //markerOptions.title("User current location"); //Doesn't like this line
+        markerOptions.title("User Current Location");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
         currentUserLocationMarker = mMap.addMarker(markerOptions);
 
@@ -188,7 +198,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
                                 Address userAddress = addressList.get(i);
                                 LatLng latLng = new LatLng(userAddress.getLatitude(), userAddress.getLongitude());
                                 userMarkerOptions.position(latLng);
-                                //markerOptions.title(address); //Doesn't like this line
+                                userMarkerOptions.title(address);
                                 userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
                                 mMap.addMarker(userMarkerOptions);
                                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
@@ -210,7 +220,6 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
                 break;
 
             case R.id.seach_for_libraries:
-                mMap.clear();
                 String url = getUrl(latitude, longitude, library);
                 transferData[0] = mMap;
                 transferData[1] = url;

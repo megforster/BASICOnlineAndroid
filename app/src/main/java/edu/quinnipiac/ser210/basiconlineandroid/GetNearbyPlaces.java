@@ -55,8 +55,8 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
             LatLng latLng = new LatLng(lat, lng);
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.position(latLng);
-            //markerOptions.title(nameOfPlace+" : "+vicinity); //Doesn't like this line
-            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
+            markerOptions.title(placeName+" : "+vicinity); //Doesn't like this line
+            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
