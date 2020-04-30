@@ -14,7 +14,7 @@ public class QuizSource {
     // Database fields
     private SQLiteDatabase quizDatabase;
     private BasicSQLiteHelper dbHelper;
-    private String[] allColumns = { BasicSQLiteHelper.COLUMN_ID,
+    private String[] questionsColumns = { BasicSQLiteHelper.COLUMN_ID,
             BasicSQLiteHelper.COLUMN_QUESTIONS };
 
     private String[] answerColumns = { BasicSQLiteHelper.COLUMN_ID,
@@ -23,6 +23,7 @@ public class QuizSource {
     public QuizSource(Context context) {
         dbHelper = new BasicSQLiteHelper(context);
     }
+
 
     public void open() throws SQLException {
         quizDatabase = dbHelper.getWritableDatabase();
@@ -37,7 +38,7 @@ public class QuizSource {
         ContentValues questionValues = new ContentValues();
         questionValues.put(BasicSQLiteHelper.COLUMN_QUESTIONS,question);
         long insertId = quizDatabase.insert(BasicSQLiteHelper.TABLE_QUIZ_QUESTIONS, null, questionValues);
-        Cursor cursor = quizDatabase.query(BasicSQLiteHelper.TABLE_QUIZ_QUESTIONS,allColumns, BasicSQLiteHelper.COLUMN_ID + "=" + insertId, null, null, null,null);
+        Cursor cursor = quizDatabase.query(BasicSQLiteHelper.TABLE_QUIZ_QUESTIONS, questionsColumns, BasicSQLiteHelper.COLUMN_ID + "=" + insertId, null, null, null,null);
         cursor.moveToFirst();
         quizQuestions newQuestion = cursorToQuestion(cursor);
         cursor.close();
@@ -62,10 +63,10 @@ public class QuizSource {
 
     }
 
-    public List<quizQuestions> getAllComments() {
+    public List<quizQuestions> getAllQuestions() {
         List<quizQuestions> comments = new ArrayList<quizQuestions>();
         //Select * from comments (sql);
-        Cursor cursor = quizDatabase.query(BasicSQLiteHelper.TABLE_QUIZ_QUESTIONS,allColumns,null,null,null,null,null);
+        Cursor cursor = quizDatabase.query(BasicSQLiteHelper.TABLE_QUIZ_QUESTIONS, questionsColumns,null,null,null,null,null);
         cursor.moveToFirst();
         while(! cursor.isAfterLast()){
             quizQuestions question = cursorToQuestion(cursor);

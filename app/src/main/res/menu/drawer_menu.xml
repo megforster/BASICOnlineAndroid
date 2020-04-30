@@ -15,6 +15,11 @@
             android:title="@string/nav_favorites" />
 
         <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_quiz"
+            android:title="@string/nav_quiz" />
+
+        <item
             android:id="@+id/nav_library"
             android:icon="@drawable/ic_find_library"
             android:title="@string/nav_library" />

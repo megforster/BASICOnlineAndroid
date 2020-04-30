@@ -125,22 +125,6 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 
 
 
-        /*switch (item.getItemId()) {
-            case R.id.help_menu:
-
-                displayView(0);
-                return true ;
-
-            case R.id.settings_menu:
-                displayView(1);
-                return true;
-
-            case R.id.libraries_menu:
-               displayView(2);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }*/
 
     }
     //Method to allow button action clicks on the navigation side menu
@@ -149,13 +133,22 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         switch(menuItem.getItemId()){
             case R.id.nav_homescreen:
                 //Intent to get home screen
-                Intent intentHome = new Intent(this, HomeScreen.class); // go to the Help Screen
+                Intent intentHome = new Intent(this, HomeScreen.class); // go to the Home Screen
 
                 startActivity(intentHome);
                 break;
-            case R.id.nav_favorites:
+
+            case R.id.nav_quiz:
+                //Intent to get home screen
+                Intent intentQuiz = new Intent(this, QuizActivity.class); // go to the Quiz// Screen
+                startActivity(intentQuiz);
+                break;
+
+                case R.id.nav_favorites:
                 //Favorites not yet implemented
                 break;
+
+
             case R.id.nav_library:
                 Intent intentLibrary = new Intent(this, findLibrary.class);
                 startActivity(intentLibrary);

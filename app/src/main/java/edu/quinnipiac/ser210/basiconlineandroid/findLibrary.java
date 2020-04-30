@@ -229,9 +229,9 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         googleURL.append("location=" + latitude+","+longitude);
         googleURL.append("&radius="+proximityRadius);
         googleURL.append("&keyword="+nearByPlace); //type
-        String serverKey = getString(R.string.server);
+       // String serverKey = getString(R.string.server);
         String apiKey = getString(R.string.api);
-        googleURL.append("&key="+serverKey);
+        //googleURL.append("&key="+serverKey);
         googleURL.append("&sensor=true");
 
         Log.d("findLibrary Activity", "url = "+googleURL.toString());
