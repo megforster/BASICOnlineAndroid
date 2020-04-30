@@ -27,6 +27,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     private DrawerLayout nav_drawer;
     private ShareActionProvider shareActionProvider;
     private SectionsPagerAdapter pagerAdapter;
+    //RootFragment rootFragment;
 
 
     @Override
@@ -60,6 +61,8 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 //        //Attach the ViewPager to the TabLayout
 //        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 //        tabLayout.setupWithViewPager(pager);
+
+        //rootFragment =  new RootFragment();
     }
 
     public void getUserName(){
@@ -112,7 +115,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 return true;
             case R.id.settings_menu:
                 Intent intentSettings = new Intent(this, settings.class);
-                startActivity(intentSettings);
+                startActivityForResult(intentSettings, 0);
                 return true;
 
             case R.id.libraries_menu:
@@ -124,25 +127,15 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         }
 
 
-
-        /*switch (item.getItemId()) {
-            case R.id.help_menu:
-
-                displayView(0);
-                return true ;
-
-            case R.id.settings_menu:
-                displayView(1);
-                return true;
-
-            case R.id.libraries_menu:
-               displayView(2);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }*/
-
     }
+
+    /*protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==0){
+            rootFragment.getView().setBackgroundResource(R.color.white);
+        }
+    }*/
+
     //Method to allow button action clicks on the navigation side menu
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -160,8 +153,6 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 Intent intentLibrary = new Intent(this, findLibrary.class);
                 startActivity(intentLibrary);
                 break;
-                /*// Fragment managerto begin transaction to go to the libraries fragment
-                getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new searchForNearbyLibraries()).commit();*/
             case R.id.nav_help:
                 //Intent to pass to access Help screen from the navside menu
                 Intent intentHelp = new Intent(this, help.class); // go to the Help Screen
