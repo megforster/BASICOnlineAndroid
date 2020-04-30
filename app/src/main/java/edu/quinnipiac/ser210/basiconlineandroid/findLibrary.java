@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.internal.location.zzas;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
@@ -71,6 +72,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
+
 
         }
     }
@@ -130,7 +132,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        //markerOptions.title("User current location"); //Doesn't like this line
+        markerOptions.title("User Current Location"); //Doesn't like this line
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
         currentUserLocationMarker = mMap.addMarker(markerOptions);
 
