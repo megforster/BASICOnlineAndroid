@@ -142,9 +142,16 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         switch(menuItem.getItemId()){
             case R.id.nav_homescreen:
                 //Intent to get home screen
-                Intent intentHome = new Intent(this, HomeScreen.class); // go to the Help Screen
+                Intent intentHome = new Intent(this, HomeScreen.class); // go to the Home Screen
 
                 startActivity(intentHome);
+                break;
+
+            case R.id.nav_quiz:
+                //Intent to get home screen
+                Intent intentQuiz = new Intent(this, QuizActivity.class); // go to the Quiz Screen
+
+                startActivity(intentQuiz);
                 break;
             case R.id.nav_favorites:
                 //Favorites not yet implemented
