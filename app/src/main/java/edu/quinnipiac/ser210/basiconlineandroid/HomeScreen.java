@@ -148,11 +148,11 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 break;
 
             case R.id.nav_quiz:
-                //Intent to get home screen
+                //Intent to get quiz screen
                 Intent intentQuiz = new Intent(this, QuizActivity.class); // go to the Quiz Screen
-
                 startActivity(intentQuiz);
                 break;
+
             case R.id.nav_favorites:
                 //Favorites not yet implemented
                 break;

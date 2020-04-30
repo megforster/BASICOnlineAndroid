@@ -4,7 +4,23 @@ public class quizQuestions {
 
     private long id;
     private String questions;
-    private String answer;
+    private int answerNum;
+    private String choice1;
+    private String choice2;
+    private String choice3;
+
+    public quizQuestions() {
+
+    }
+
+    public quizQuestions(String questions, String choice1, String choice2, String choice3, int answerNum) {
+        this.questions = questions;
+        this.answerNum = answerNum;
+        this.choice1 = choice1;
+        this.choice2 = choice2;
+        this.choice3 = choice3;
+    }
+
 
     public long getId() {
         return id;
@@ -14,27 +30,44 @@ public class quizQuestions {
         this.id = id;
     }
 
+
     public String getQuestions() {
         return questions;
-    }
-
-    public String getAnswer() {
-        return answer;
     }
 
     public void setQuestions(String questions) {
         this.questions = questions;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public int getAnswerNum() {
+        return answerNum;
     }
 
-    // Will  allow for the question to be used by ArrayAdapter in the ListView
-    @Override
-    public String toString() {
-        return questions;
-
+    public void setAnswerNum(int answerNum) {
+        this.answerNum = answerNum;
     }
 
+    public String getChoice1() {
+        return choice1;
+    }
+
+    public void setChoice1(String choice1) {
+        this.choice1 = choice1;
+    }
+
+    public String getChoice2() {
+        return choice2;
+    }
+
+    public void setChoice2(String choice2) {
+        this.choice2 = choice2;
+    }
+
+    public String getChoice3() {
+        return choice3;
+    }
+
+    public void setChoice3(String choice3) {
+        this.choice3 = choice3;
+    }
 }
