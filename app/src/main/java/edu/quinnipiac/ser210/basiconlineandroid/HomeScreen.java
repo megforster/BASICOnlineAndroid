@@ -162,19 +162,14 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 break;
                 /*// Fragment managerto begin transaction to go to the libraries fragment
                 getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new searchForNearbyLibraries()).commit();*/
-            case R.id.nav_settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.root_frame,new settings()).commit();
-                break;
             case R.id.nav_help:
                 //Intent to pass to access Help screen from the navside menu
                 Intent intentHelp = new Intent(this, help.class); // go to the Help Screen
                 startActivity(intentHelp);
                 break;
             case R.id.nav_share:
-                Toast.makeText(this, "Share with Friends",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_messgae:
-                Toast.makeText(this, "Send a Message",Toast.LENGTH_SHORT).show();
+                shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+                setShareActionIntent("Look at the progress I am making.");
                 break;
         }
         nav_drawer.closeDrawer(GravityCompat.START);

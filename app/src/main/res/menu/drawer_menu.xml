@@ -34,10 +34,6 @@
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_share"
                 android:title="@string/nav_share" />
-            <item
-                android:id="@+id/nav_messgae"
-                android:icon="@drawable/ic_text_message"
-                android:title="@string/nav_message" />
         </menu>
     </item>
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#94dcfb"
+    tools:context=".settings"
+    android:orientation="vertical">
+
+   <Button
+       android:id="@+id/fontButton"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@drawable/my_button_bg"
+       android:onClick="changeFontSize"
+       android:text="Change Font Sizes"
+       android:textColor="#000000"
+       android:textStyle="bold" />
+
+   <Button
+       android:id="@+id/colorButton"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@drawable/my_button_bg"
+       android:onClick="changeColor"
+       android:text="Change Font Sizes"
+       android:textColor="#000000"
+       android:textStyle="bold" />
+
+</LinearLayout>
