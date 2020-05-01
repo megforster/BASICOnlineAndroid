@@ -1,9 +1,12 @@
 package edu.quinnipiac.ser210.basiconlineandroid;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +19,7 @@ public class homeButtons extends Fragment {
 
 
     public homeButtons() {
-        // Required empty public constructor
+
     }
 
 
@@ -122,5 +125,4 @@ public class homeButtons extends Fragment {
 
         return view;
     }
-
 }

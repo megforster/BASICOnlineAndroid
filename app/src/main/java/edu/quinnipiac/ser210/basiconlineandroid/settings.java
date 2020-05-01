@@ -2,6 +2,7 @@ package edu.quinnipiac.ser210.basiconlineandroid;
 
 
 import android.Manifest;
+import android.app.Application;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -23,7 +24,7 @@ public class settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(getThemeFlag() ? R.style.AppTheme2 : R.style.AppTheme);
+        setTheme(getThemeFlag() ? R.style.AppTheme : R.style.AppTheme2);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -34,9 +35,9 @@ public class settings extends AppCompatActivity {
             public void onClick(View v) {
                 saveThemeFlag(!getThemeFlag());
 
-                Intent intent = new Intent(settings.this, settings.class);
-                startActivity(intent);
-                finish();
+                /*Intent settingsIntent = new Intent(settings.this,settings.class); //settings.class
+                startActivity(settingsIntent);*/
+                Runtime.getRuntime().exit(0);
             }
         });
 

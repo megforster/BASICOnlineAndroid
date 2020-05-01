@@ -1,9 +1,14 @@
 package edu.quinnipiac.ser210.basiconlineandroid;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -27,11 +32,13 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     private DrawerLayout nav_drawer;
     private ShareActionProvider shareActionProvider;
     private SectionsPagerAdapter pagerAdapter;
+
     //RootFragment rootFragment;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(getThemeFlag() ? R.style.AppTheme : R.style.AppTheme2);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -63,6 +70,26 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 //        tabLayout.setupWithViewPager(pager);
 
         //rootFragment =  new RootFragment();
+        View v = LayoutInflater.from(this).inflate(R.layout.activity_settings, null);
+
+        Button changeColor = (Button) v.findViewById(R.id.colorButton);
+       changeColor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("onClick in HomeScreen");
+                Intent settingsIntent = new Intent(HomeScreen.this,HomeScreen.class); //settings.class
+                startActivity(settingsIntent);
+                finish();
+
+            }
+        });
+    }
+
+
+
+    private boolean getThemeFlag(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        return preferences.getBoolean("orig", false);
     }
 
     public void getUserName(){
