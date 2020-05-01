@@ -4,13 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +34,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //For changing colors and font sizes
         setTheme(getThemeFlag() ? R.style.AppTheme : R.style.AppTheme2);
         setTheme(getFontFlag() ? R.style.Font: R.style.Font2);
         super.onCreate(savedInstanceState);
@@ -57,10 +54,6 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         toggleNav.syncState();
 
         getUserName();
-//        Intent intent = getIntent(); // get the intent
-//        String nameText = intent.getStringExtra(USER_NAME); // get the player name
-//        TextView nameView = (TextView) findViewById(R.id.welcomeName); //welcome message for splash screen
-//        nameView.setText("Welcome To BASIC " + nameText);
 
         pagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
@@ -68,26 +61,28 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     }
 
 
-
+    //Returns which theme to use
     private boolean getThemeFlag(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         return preferences.getBoolean("origColor", false);
     }
 
+    //Returns which font size to use
     private boolean getFontFlag(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         return preferences.getBoolean("origSize", false);
     }
 
+    //Accesses name user entered on splash screen to set welcome message
     public void getUserName(){
         Intent intent = getIntent(); // get the intent
         String nameText = intent.getStringExtra(USER_NAME); // get the player name
         TextView nameView = (TextView) findViewById(R.id.welcomeName); //welcome message for splash screen
-        nameView.setText("Welcome To BASIC " + nameText);
+        nameView.setText("Welcome " + nameText);
 
     }
 
-
+    //Helps set up share feature and upper-right hand side menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -101,6 +96,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         //return true;
     }
 
+    //Required for share feature
     private void setShareActionIntent(String text) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
@@ -108,6 +104,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         shareActionProvider.setShareIntent(intent);
     }
 
+    //Controls part of drawer navifation
     @Override
     public void onBackPressed(){
        if(nav_drawer.isDrawerOpen(GravityCompat.START)){
@@ -117,11 +114,9 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
        }
     }
 
-
+    //Controls switching screens when upper-right hand side menu option is selected
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-
         switch (item.getItemId()) {
             case R.id.help_menu:
                 Intent intentHelp = new Intent(this, help.class);
@@ -142,13 +137,6 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 
 
     }
-
-    /*protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==0){
-            rootFragment.getView().setBackgroundResource(R.color.white);
-        }
-    }*/
 
     //Method to allow button action clicks on the navigation side menu
     @Override
@@ -195,6 +183,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         return true;
     }
 
+    //Helps handle swapping currently visible fragment with selected fragment
     public static class SectionsPagerAdapter extends FragmentPagerAdapter {
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -207,7 +196,6 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 
         @Override
         public Fragment getItem(int position) {
-            //System.out.println("gettingItem");
             switch (position) {
                 case 0:
                     return new RootFragment();

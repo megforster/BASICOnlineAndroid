@@ -29,8 +29,10 @@ public class homeButtons extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_buttons, container, false);
 
+        //Reference to option button
         Button computerParts = (Button) view.findViewById(R.id.compParts);
 
+        //When button is pressed replace the currently visible fragment with the associated fragment
         computerParts.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -41,6 +43,8 @@ public class homeButtons extends Fragment {
                 trans.replace(R.id.root_frame, new learnAboutComputerParts());
 
                 trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+                //Allows for backwards naviation
                 trans.addToBackStack(null);
 
                 trans.commit();
@@ -118,11 +122,6 @@ public class homeButtons extends Fragment {
                 trans.commit();
             }
         });
-
-
-
-
-
         return view;
     }
 }

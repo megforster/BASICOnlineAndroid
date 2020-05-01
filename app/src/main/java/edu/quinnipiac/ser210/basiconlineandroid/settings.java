@@ -48,14 +48,6 @@ public class settings extends AppCompatActivity {
         });
     }
 
-    /*public void changeFontSize(View view) {
-        Toast.makeText(this, "In the future this will allow you to change the font size of the information screens", Toast.LENGTH_SHORT).show();
-    }
-
-    public void changeColor(View view) {
-        Toast.makeText(this, "In the future this will allow you to change main colors of this android app", Toast.LENGTH_SHORT).show();
-    }*/
-
     private void saveThemeFlag(boolean flag){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();

@@ -18,6 +18,7 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
     private String googlePlaceData, url;
     private GoogleMap mMap;
 
+    //Sets up data API returns for map
     @Override
     protected String doInBackground(Object... objects) {
         mMap = (GoogleMap)objects[0];
@@ -33,6 +34,7 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
         return googlePlaceData;
     }
 
+    //Collects info on any results returned from searching for nearby libraries
     @Override
     protected void onPostExecute(String string) {
         List<HashMap<String, String>> nearbyPlacesList = null;
@@ -41,6 +43,7 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String> {
         DisplayNearbyPlaces(nearbyPlacesList);
     }
 
+    //Creates the markers for any nearby libraries
     private void DisplayNearbyPlaces(List<HashMap<String,String>> nearbyPlacesList){
         Log.i("GetNearbyPlaces", "Starting DisplayNearbyPlaces");
         Log.i("GetNearbyPlaces", "nearbyPlacesList length: "+nearbyPlacesList.size());

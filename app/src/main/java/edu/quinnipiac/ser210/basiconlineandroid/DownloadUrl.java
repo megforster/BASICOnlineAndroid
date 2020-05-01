@@ -12,6 +12,7 @@ import java.net.URL;
 
 public class DownloadUrl {
 
+    //Connects to the API and turns the results into readable data
     public String readUrl(String placeUrl) throws IOException{
         String Data = "";
         InputStream inputStream = null;
@@ -29,7 +30,6 @@ public class DownloadUrl {
             String line = "";
 
             while((line = bufferedReader.readLine())!=null){
-                //Log.i("redUrl", "line: "+ line);
                 stringBuffer.append(line);
             }
             Data = stringBuffer.toString();

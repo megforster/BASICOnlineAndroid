@@ -14,6 +14,7 @@ public class socialMediaInformation extends Fragment {
     View view;
     String text;
 
+    //Gets the user selected text to be used for setting the fragment text
     public socialMediaInformation(String text) {
         this.text = text;
     }
@@ -27,6 +28,7 @@ public class socialMediaInformation extends Fragment {
         return view;
     }
 
+    //Changes fragment text to match user selection and enables scrolling
     public void setText(String text){
         TextView textV = view.findViewById(R.id.text);
         textV.setText(text);

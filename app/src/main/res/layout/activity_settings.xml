@@ -7,10 +7,20 @@
     tools:context=".settings"
     android:orientation="vertical">
 
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Settings Menu"
+       android:textSize="30sp"
+       android:gravity="center"
+       android:textColor="@color/black"/>
+
    <Button
        android:id="@+id/fontButton"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:layout_marginTop="10dp"
+       android:layout_marginBottom="10dp"
        android:background="@drawable/my_button_bg"
        android:text="Change Font Sizes"
        android:textColor="#000000"
@@ -20,9 +30,16 @@
        android:id="@+id/colorButton"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:layout_marginTop="10dp"
+       android:layout_marginBottom="10dp"
        android:background="@drawable/my_button_bg"
        android:text="Change Component Color"
        android:textColor="#000000"
        android:textStyle="bold" />
+
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:src="@drawable/settings"/>
 
 </LinearLayout>

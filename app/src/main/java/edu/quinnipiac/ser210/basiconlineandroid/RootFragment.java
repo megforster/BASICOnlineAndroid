@@ -15,8 +15,7 @@ import android.view.ViewGroup;
  */
 public class RootFragment extends Fragment {
 
-    private static final String TAG = "RootFragment";
-    //NavController navController = null;
+    //private static final String TAG = "RootFragment";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,10 +25,8 @@ public class RootFragment extends Fragment {
 
         FragmentTransaction transaction = getFragmentManager()
                 .beginTransaction();
-        /*
-         * When this container fragment is created, we fill it with our first
-         * "real" fragment
-         */
+
+        //Initially eplaces base fragment with home buttons screen
         transaction.replace(R.id.root_frame, new homeButtons());
 
         transaction.commit();

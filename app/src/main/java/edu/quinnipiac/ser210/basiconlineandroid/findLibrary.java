@@ -58,15 +58,11 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         mapFragment.getMapAsync(this);
     }
 
+    //Sets up the Google map
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-
-        /*mMap.setMyLocationEnabled(true);
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            buildGoogleApiClient();
-        }*/
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)
@@ -85,6 +81,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         }
     }
 
+    //Makes sure map has proper permissions
     public boolean checkUserLocationPermission(){
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
@@ -100,6 +97,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
 
     }
 
+    //Processes users response to a permission request
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch(requestCode){
@@ -118,6 +116,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         }
     }
 
+    //Builds the API client
     protected synchronized void buildGoogleApiClient(){
         googleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -127,6 +126,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         googleApiClient.connect();
     }
 
+    //Handles map logic and visuals for when a user changes their location (by moving to manually typing in one)
     @Override
     public void onLocationChanged(Location location) {
         latitude = location.getLatitude();
@@ -152,6 +152,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         }
     }
 
+    //Controls connection to API and optimizes it to use the least device power possible
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         locationRequest = new LocationRequest();
@@ -165,16 +166,19 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
 
     }
 
+    //Method required by interfaces implemented
     @Override
     public void onConnectionSuspended(int i) {
 
     }
 
+    //Method required by interfaces implemented
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
 
+    //Handles when user selects a button on the map
     public void onClick(View v){
 
         String library = "library";
@@ -182,6 +186,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
 
         switch(v.getId()){
+            //When the user searches for a specific location
             case R.id.search_lib:
                 EditText addressField = (EditText) findViewById(R.id.location_search);
                 String address = addressField.getText().toString();
@@ -219,6 +224,7 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
                 }
                 break;
 
+            //When the user searches for nearby libraries
             case R.id.seach_for_libraries:
                 String url = getUrl(latitude, longitude, library);
                 transferData[0] = mMap;
@@ -233,13 +239,14 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
 
     }
 
+    //Creates URL for API request
     private String getUrl(double latitude, double longitude, String nearByPlace){
         StringBuilder googleURL = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googleURL.append("location=" + latitude+","+longitude);
         googleURL.append("&radius="+proximityRadius);
         googleURL.append("&keyword="+nearByPlace); //type
-       //String serverKey = getString(R.string.server);
-       // googleURL.append("&key="+serverKey);
+       String serverKey = getString(R.string.server);
+       googleURL.append("&key="+serverKey);
         googleURL.append("&sensor=true");
 
         Log.d("findLibrary Activity", "url = "+googleURL.toString());

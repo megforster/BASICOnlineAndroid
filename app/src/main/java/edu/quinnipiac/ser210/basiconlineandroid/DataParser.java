@@ -10,6 +10,7 @@ import java.util.List;
 
 public class DataParser {
 
+    //Grabs a single result returned by the API and passes the information to a hash map
     private HashMap<String, String> getSingleNearbyPlace(JSONObject googlePlaceJSON){
         HashMap<String, String> googlePlaceMap = new HashMap<>();
         String nameOfPlace = "-NA-";
@@ -42,6 +43,7 @@ public class DataParser {
         return googlePlaceMap;
     }
 
+    //Creates a hash map of containing the information of every result from getSinglePlaceNearby
     private List<HashMap<String, String>> getAllNearbyPlaces(JSONArray jsonArray){
         int counter = jsonArray.length();
 
@@ -60,6 +62,7 @@ public class DataParser {
         return nearbyPlacesList;
     }
 
+    //Creates the JSON array from the results returned by the API
     public List<HashMap<String, String>> parse(String jSONdata){
         JSONArray jsonArray = null;
         JSONObject jsonObject;
