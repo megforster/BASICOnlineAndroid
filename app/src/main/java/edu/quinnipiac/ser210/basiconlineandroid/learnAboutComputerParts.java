@@ -102,4 +102,6 @@ public class learnAboutComputerParts extends Fragment {
         return view;
     }
 
+
+
 }

@@ -1,7 +1,9 @@
 package edu.quinnipiac.ser210.basiconlineandroid;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -9,8 +11,14 @@ public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(getThemeFlag() ? R.style.AppTheme : R.style.AppTheme2);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+    }
+
+    private boolean getThemeFlag(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        return preferences.getBoolean("orig", false);
     }
 
     public void onEnter(View view) {

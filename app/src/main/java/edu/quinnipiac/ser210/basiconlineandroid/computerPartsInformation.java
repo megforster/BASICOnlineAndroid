@@ -34,4 +34,6 @@ public class computerPartsInformation extends Fragment {
         textV.setMovementMethod(new ScrollingMovementMethod());
     }
 
+
+
 }

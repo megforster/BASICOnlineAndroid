@@ -64,25 +64,6 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         pagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(pagerAdapter);
-
-//        //Attach the ViewPager to the TabLayout
-//        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-//        tabLayout.setupWithViewPager(pager);
-
-        //rootFragment =  new RootFragment();
-        View v = LayoutInflater.from(this).inflate(R.layout.activity_settings, null);
-
-        Button changeColor = (Button) v.findViewById(R.id.colorButton);
-       changeColor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("onClick in HomeScreen");
-                Intent settingsIntent = new Intent(HomeScreen.this,HomeScreen.class); //settings.class
-                startActivity(settingsIntent);
-                finish();
-
-            }
-        });
     }
 
 
