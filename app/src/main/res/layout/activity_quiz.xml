@@ -7,23 +7,31 @@
     android:background="#94dcfb"
     tools:context=".QuizActivity">
 
+<!--    <include-->
+<!--        layout="@layout/activity_home_screen"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
     <TextView
         android:id="@+id/question_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Question: 1/x"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/question_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="QUESTION INFO GOES HERE"
-        android:textSize="30sp"
         android:layout_above="@id/group_radio"
         android:layout_marginBottom="18dp"
+        android:text="QUESTION INFO GOES HERE"
         android:textAlignment="center"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <RadioGroup
         android:id="@+id/group_radio"
@@ -36,31 +44,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Choice 1"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:textSize="20dp"/>
 
         <RadioButton
             android:id="@+id/button_radio2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Choice 2"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:textSize="20dp"/>
 
          <RadioButton
             android:id="@+id/button_radio3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Choice 3"
-             android:textColor="@android:color/black"/>
+             android:textColor="@android:color/black"
+             android:textSize="20dp"/>
 
     </RadioGroup>
 
     <Button
         android:id="@+id/enter_button_next"
-        android:layout_below="@+id/group_radio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter"
+        android:layout_below="@+id/group_radio"
         android:layout_marginTop="18dp"
-        />
+        android:text="Enter"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:background="#FF9F39"
+        android:textColor="#000000" />
 
 </RelativeLayout>

@@ -46,6 +46,7 @@ public class QuizActivity extends AppCompatActivity {
         radioButton3 = findViewById(R.id.button_radio3);
         enterNextButton = findViewById(R.id.enter_button_next);
 
+
         defaultTextColorRB = radioButton1.getTextColors();
 
         QuizSQLiteHelper quizHelper = new QuizSQLiteHelper(this);
@@ -113,16 +114,16 @@ public class QuizActivity extends AppCompatActivity {
 
         switch (currentQuestion.getAnswerNum()) {
             case 1:
-                radioButton1.setTextColor(Color.GREEN);
-                tvQuestion.setText("Answer 1 is correct");
+                radioButton1.setTextColor(Color.BLACK);
+                tvQuestion.setText("The Correct Answer is Answer 1");
                 break;
             case 2:
-                radioButton2.setTextColor(Color.GREEN);
-                tvQuestion.setText("Answer 2 is correct");
+                radioButton2.setTextColor(Color.BLACK);
+                tvQuestion.setText("The Correct Answer is Answer 2");
                 break;
             case 3:
-                radioButton3.setTextColor(Color.GREEN);
-                tvQuestion.setText("Answer 3 is correct");
+                radioButton3.setTextColor(Color.BLACK);
+                tvQuestion.setText("The Correct Answer is Answer 3");
                 break;
         }
 
