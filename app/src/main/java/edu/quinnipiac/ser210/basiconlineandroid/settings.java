@@ -19,42 +19,61 @@ import androidx.core.content.res.ResourcesCompat;
 
 public class settings extends AppCompatActivity {
 
+    Boolean largeFont = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(getFlag() ? R.style.AppTheme2 : R.style.AppTheme);
+        setTheme(getThemeFlag() ? R.style.AppTheme2 : R.style.AppTheme);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Button changeColor = (Button) findViewById(R.id.colorButton);
+        final Button changeColor = (Button) findViewById(R.id.colorButton);
         changeColor.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                saveFlag(!getFlag());
+                saveThemeFlag(!getThemeFlag());
 
                 Intent intent = new Intent(settings.this, settings.class);
                 startActivity(intent);
                 finish();
             }
         });
+
+        final Button changeSize = (Button) findViewById(R.id.fontButton);
+        changeSize.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(largeFont){
+                    changeColor.setTextSize(30);
+                    changeSize.setTextSize(30);
+                    largeFont = false;
+                }else{
+                    changeColor.setTextSize(15);
+                    changeSize.setTextSize(15);
+                    largeFont = true;
+                }
+
+            }
+        });
     }
 
-    public void changeFontSize(View view) {
+    /*public void changeFontSize(View view) {
         Toast.makeText(this, "In the future this will allow you to change the font size of the information screens", Toast.LENGTH_SHORT).show();
     }
 
     public void changeColor(View view) {
         Toast.makeText(this, "In the future this will allow you to change main colors of this android app", Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
-    private void saveFlag(boolean flag){
+    private void saveThemeFlag(boolean flag){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean("orig", flag);
         editor.commit();
     }
 
-    private boolean getFlag(){
+    private boolean getThemeFlag(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         return preferences.getBoolean("orig", false);
     }
