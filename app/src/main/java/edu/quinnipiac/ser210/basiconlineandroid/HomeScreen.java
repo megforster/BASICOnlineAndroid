@@ -165,6 +165,13 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
                 Intent intentHelp = new Intent(this, help.class); // go to the Help Screen
                 startActivity(intentHelp);
                 break;
+
+            case R.id.nav_settings:
+                //Intent to pass to access Help screen from the navside menu
+                Intent intentSettings = new Intent(this, settings.class); // go to the Help Screen
+                startActivity(intentSettings);
+                break;
+
             case R.id.nav_share:
                 shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
                 setShareActionIntent("Look at the progress I am making.");

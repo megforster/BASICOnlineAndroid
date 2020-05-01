@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#94dcfb"
+    android:background="?attr/background"
     tools:context=".settings"
     android:orientation="vertical">
 
@@ -23,7 +23,7 @@
        android:layout_height="wrap_content"
        android:background="@drawable/my_button_bg"
        android:onClick="changeColor"
-       android:text="Change Font Sizes"
+       android:text="Change Component Color"
        android:textColor="#000000"
        android:textStyle="bold" />
 
