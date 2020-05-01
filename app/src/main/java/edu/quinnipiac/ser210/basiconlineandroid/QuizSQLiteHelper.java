@@ -23,7 +23,7 @@ public class QuizSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        this.db = this.db;
+        this.db = db;
 
         final String SQL_CREATE_QUESTION_TABLE ="CREATE TABLE " +
            QuizSourceDB.quizQuestionsTable.TABLE_NAME + " ( " +
