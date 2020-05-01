@@ -20,11 +20,10 @@ import androidx.core.content.res.ResourcesCompat;
 
 public class settings extends AppCompatActivity {
 
-    Boolean largeFont = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(getThemeFlag() ? R.style.AppTheme : R.style.AppTheme2);
+        setTheme(getFontFlag() ? R.style.Font: R.style.Font2);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -34,9 +33,6 @@ public class settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveThemeFlag(!getThemeFlag());
-
-                /*Intent settingsIntent = new Intent(settings.this,settings.class); //settings.class
-                startActivity(settingsIntent);*/
                 Runtime.getRuntime().exit(0);
             }
         });
@@ -45,15 +41,8 @@ public class settings extends AppCompatActivity {
         changeSize.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(largeFont){
-                    changeColor.setTextSize(30);
-                    changeSize.setTextSize(30);
-                    largeFont = false;
-                }else{
-                    changeColor.setTextSize(15);
-                    changeSize.setTextSize(15);
-                    largeFont = true;
-                }
+                saveFontFlag(!getFontFlag());
+                Runtime.getRuntime().exit(0);
 
             }
         });
@@ -70,13 +59,25 @@ public class settings extends AppCompatActivity {
     private void saveThemeFlag(boolean flag){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("orig", flag);
+        editor.putBoolean("origColor", flag);
         editor.commit();
     }
 
     private boolean getThemeFlag(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        return preferences.getBoolean("orig", false);
+        return preferences.getBoolean("origColor", false);
+    }
+
+    private void saveFontFlag(boolean flag){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("origSize", flag);
+        editor.commit();
+    }
+
+    private boolean getFontFlag(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        return preferences.getBoolean("origSize", false);
     }
 
 

@@ -39,6 +39,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(getThemeFlag() ? R.style.AppTheme : R.style.AppTheme2);
+        setTheme(getFontFlag() ? R.style.Font: R.style.Font2);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -70,7 +71,12 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 
     private boolean getThemeFlag(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        return preferences.getBoolean("orig", false);
+        return preferences.getBoolean("origColor", false);
+    }
+
+    private boolean getFontFlag(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        return preferences.getBoolean("origSize", false);
     }
 
     public void getUserName(){

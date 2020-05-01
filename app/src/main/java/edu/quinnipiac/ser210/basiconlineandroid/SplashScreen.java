@@ -12,13 +12,19 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(getThemeFlag() ? R.style.AppTheme : R.style.AppTheme2);
+        setTheme(getFontFlag() ? R.style.Font: R.style.Font2);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
     }
 
     private boolean getThemeFlag(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        return preferences.getBoolean("orig", false);
+        return preferences.getBoolean("origColor", false);
+    }
+
+    private boolean getFontFlag(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        return preferences.getBoolean("origSize", false);
     }
 
     public void onEnter(View view) {

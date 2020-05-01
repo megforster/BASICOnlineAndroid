@@ -17,4 +17,13 @@
         <item name="background">@color/white</item>
     </style>
 
+
+    <style name="Font" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="Font2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">15sp</item>
+    </style>
+
 </resources>

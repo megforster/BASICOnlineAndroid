@@ -16,6 +16,7 @@
         android:scrollbars="vertical"
         android:text="Hello"
         android:textColor="#000000"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        />
 
 </FrameLayout>
