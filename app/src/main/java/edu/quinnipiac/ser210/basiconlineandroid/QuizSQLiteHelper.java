@@ -13,7 +13,7 @@ import java.util.List;
 public class QuizSQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "QUIZ.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     private SQLiteDatabase db;
 
@@ -60,41 +60,42 @@ public class QuizSQLiteHelper extends SQLiteOpenHelper {
 
         quizQuestions quest2 = new quizQuestions("The symbol on screen that shows the current position of the user, which can be a flashing line, arrow, or uppercase I, is called the______",
                 "Pointer or Position",
-                "Cursor or Mouse!",
+                "Cursor or Mouse",
                 "Clicker",
                 2);
         addQuizQuestion(quest2);
 
         quizQuestions quest3 = new quizQuestions("True or False. The only information online about you are things you have posted.",
-                "True! The only information online about me is from my social media accounts",
-                null,
-                "False! Public government records can show if you own a home, vote, or have a criminal record, your family can post information about you, and GPS services like Google Maps have an image of your home.",3);
+                "True. The only information online about me is from my social media accounts",
+                "I don't know",
+                "False. Public government records can show if you own a home, vote, or have a criminal record, your family can post information about you, and GPS services like Google Maps have an image of your home.",3);
         addQuizQuestion(quest3);
 
         quizQuestions quest4 = new quizQuestions("When you want to save a website you commonly use or want to visit later you add it to your ...",
-                "Bookmarks (or favorites depending on the web browser)! ",
+                "Bookmarks (or favorites depending on the web browser) ",
                 "Save For Later",
                 "Favorites",
                 1);
         addQuizQuestion(quest4);
 
         quizQuestions quest5 = new quizQuestions("True or False. Social media is much safer than the internet because there are little to no scams",
-                "True! More people are on social media today so there is less harm.",
-                "False! Scams still exist on social media sites. Whenever you are online you must be vigilant",
-                null,
+                "True. More people are on social media today so there is less harm.",
+                "False. Scams still exist on social media sites. Whenever you are online you must be vigilant",
+                "I don't know",
                 2);
         addQuizQuestion(quest5);
 
         quizQuestions quest6 = new quizQuestions("The two main types of computers are _____and ______",
-                "Ipad and Tablet", "Iphone and Android",
-                "Desktop and Laptop! ",
+                "Ipad and Tablet",
+                "Iphone and Android",
+                "Desktop and Laptop ",
                 3);
         addQuizQuestion(quest6);
 
         quizQuestions quest7 = new quizQuestions("True or False. The left and right facing arrows near the top of the browser page allow you to move through websites you've recently visited. The left arrow takes you back and the right arrow takes you forward.",
-                "True! The arrows are used for forward and backward navigation. If you ever see an arrow going in a circle next to those, that's the refresh button that reloads the webpage",
-                "False! The arrows are used for moving the application.",
-                "C",
+                "True. The arrows are used for forward and backward navigation. If you ever see an arrow going in a circle next to those, that's the refresh button that reloads the webpage",
+                "False. The arrows are used for moving the application.",
+                "I don't know",
                 1);
         addQuizQuestion(quest7);
 
@@ -106,49 +107,52 @@ public class QuizSQLiteHelper extends SQLiteOpenHelper {
         addQuizQuestion(quest8);
 
         quizQuestions quest9 = new quizQuestions("True or False. The tower is the part of the computer that shows you things",
-                "True! The tower is what shows you things",
-                null,
-                "False! The tower is part of a desktop computer that stores the computer parts. ",
+                "True. The tower is what shows you things",
+                "I don't know",
+                "False. The tower is part of a desktop computer that stores the computer parts. ",
                 3);
         addQuizQuestion(quest9);
 
         quizQuestions quest10 = new quizQuestions("True or False. It is okay to use the same password for everything",
-                "Tab! ",
-                "Browser!",
-                "Cursor!",
+                "Tab ",
+                "Browser",
+                "Cursor",
                 1);
         addQuizQuestion(quest10);
 
         quizQuestions quest11 = new quizQuestions("True or False. It is okay to use the same password for everything",
-                "True! This way you remember.",
-                "False! You should use different passwords for accounts you have. ",
-                null,
+                "True. This way you remember.",
+                "False. You should use different passwords for accounts you have. ",
+                "I don't know.",
                 2);
         addQuizQuestion(quest11);
 
         quizQuestions quest12 = new quizQuestions("True or False. URLs are like street addresses because they tell your browser where to go on the internet.",
-                "False! Many websites have them", null,
-                "True! Each website online has a unique address called a URL. URL stands for Uniform Resource Locator",
+                "False. Many websites have them",
+                "I don't know.",
+                "True. Each website online has a unique address called a URL. URL stands for Uniform Resource Locator",
                 3);
         addQuizQuestion(quest12);
 
         quizQuestions quest13 = new quizQuestions("The most popular social media groups are Facebook, Twitter, and .",
-                "Instagram! Other popular groups include Pinterest, and YouTube",
+                "Instagram. Other popular groups include Pinterest, and YouTube",
                 "Myspace",
                 "PartyHop",
                 1);
         addQuizQuestion(quest13);
 
         quizQuestions quest14 = new quizQuestions("True or false. Microsoft Word is an example of an application.",
-                "False!",
-                "True! Other examples of applications include Google Chrome and your computers calculator",
-                null,
+                "False. Application only apply to phones.",
+                "True. Other examples of applications include Google Chrome and your computers calculator",
+                "I don't know.",
                 2);
         addQuizQuestion(quest14);
 
         quizQuestions quest15 = new quizQuestions("Who are the most at risk online? ",
-                "seniors and adults", "teenagers",
-                "All of the above! Everyone is at risk if they don't understand the threats",3);
+                "seniors and adults",
+                "teenagers",
+                "All of the above. Everyone is at risk if they don't understand the threats",
+                3);
         addQuizQuestion(quest15);
 
         quizQuestions quest16 = new quizQuestions("What symbol does your cursor turn into when you have it over a link? ",
@@ -161,28 +165,28 @@ public class QuizSQLiteHelper extends SQLiteOpenHelper {
         quizQuestions quest17 = new quizQuestions("True or False. It is okay to give out bank account information over email.\",",
                 "True. They have my email address.",
                 "False. You should not be required to give any banking information over email",
-                null,
+                "I don't know",
                 2);
         addQuizQuestion(quest17);
 
         quizQuestions quest18 = new quizQuestions("The ________ is what you use to type ",
                 "Mouse",
                 "Trackpad",
-                "Keyboard! ",
+                "Keyboard ",
                 3);
         addQuizQuestion(quest18);
 
         quizQuestions quest19 = new quizQuestions("Which password is the most secure? '12345678', 'password', your spouse’s name, or 'T1MpFoS!",
-                "T1MpFoS! (least 8 characters along, has both uppercase and lowercase letters, has at least one number, has a special character)",
+                "T1MpFoS (least 8 characters along, has both uppercase and lowercase letters, has at least one number, has a special character)",
                 "12345678 (easy to remember)",
                 "your spouse's name (easy to remember)",
                 1);
         addQuizQuestion(quest19);
 
         quizQuestions quest20 = new quizQuestions("True or False. Concerns about heavy social media are depression and online harassment",
-                "False! social media has no effect on people's mental health.",
-                "True! Other concerns include cyberbullying and 'trolling'",
-                null,
+                "False. social media has no effect on people's mental health.",
+                "True. Other concerns include cyberbullying and 'trolling'",
+                "I don't know.",
                 2);
         addQuizQuestion(quest20);
 

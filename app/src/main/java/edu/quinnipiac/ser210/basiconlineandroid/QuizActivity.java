@@ -115,6 +115,7 @@ public class QuizActivity extends AppCompatActivity {
         switch (currentQuestion.getAnswerNum()) {
             case 1:
                 radioButton1.setTextColor(Color.BLACK);
+
                 tvQuestion.setText("The Correct Answer is Answer 1");
                 break;
             case 2:

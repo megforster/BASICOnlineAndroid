@@ -20,4 +20,5 @@
     <string name="nav_close_drawer">Close Navigation Drawer</string>
     <string name="title_activity_find_library">Map</string>
     <string name="nav_quiz">QUIZ</string>
+    <string name="welcome_quiz">Ready Quiz Your Knowledge</string>
 </resources>

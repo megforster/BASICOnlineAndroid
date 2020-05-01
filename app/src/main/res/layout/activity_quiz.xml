@@ -12,14 +12,27 @@
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent" />-->
 
+
+    <TextView
+        android:id="@+id/quiz_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9F39"
+        android:text="@string/welcome_quiz"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/question_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Question: 1/x"
         android:textColor="@android:color/black"
-        android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:paddingTop="35dp"/>
 
     <TextView
         android:id="@+id/question_view"
