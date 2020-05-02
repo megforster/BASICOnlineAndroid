@@ -52,7 +52,7 @@ public class QuizSQLiteHelper extends SQLiteOpenHelper {
     private void fillQuestionTable(){
 
         quizQuestions quest1 = new quizQuestions("Social Media are _______________",
-                "forms of electronic communication through which users create online communities to share information, ideas,\" + personal messages, and other content\", ",
+                "forms of electronic communication through which users create online communities to share information, ideas,\" + personal messages, and other content ",
                 "A form of music. A place to find music and other forms of media.",
                 "A form of movie media. A place to find movies.",
                 1);
