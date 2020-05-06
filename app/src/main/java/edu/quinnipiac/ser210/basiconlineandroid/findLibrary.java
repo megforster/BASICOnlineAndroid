@@ -1,3 +1,11 @@
+
+/*
+Authors: Megan Forster and Alexandra Martin
+Basic Online for Android
+Android Development Final Project
+2 May 2020
+ */
+
 package edu.quinnipiac.ser210.basiconlineandroid;
 
 import android.Manifest;
@@ -245,6 +253,15 @@ public class findLibrary extends FragmentActivity implements OnMapReadyCallback,
         googleURL.append("location=" + latitude+","+longitude);
         googleURL.append("&radius="+proximityRadius);
         googleURL.append("&keyword="+nearByPlace); //type
+
+        /*Keep these two below commented out to run app without setting up an API key for the googlemaps
+         *  if set up API can run the find library with googlemaps on emulator
+         * Another line of code that is commented out in the values googlemaps api.xml
+         *
+         * <!--    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">@string/api</string>-->
+         * if you have key this line can be uncommented otherwise keep commnented out
+        */
+
       // String serverKey = getString(R.string.server);
       // googleURL.append("&key="+serverKey);
         googleURL.append("&sensor=true");

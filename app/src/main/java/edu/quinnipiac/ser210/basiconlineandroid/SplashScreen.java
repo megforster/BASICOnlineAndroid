@@ -1,4 +1,13 @@
+/*
+Authors: Megan Forster and Alexandra Martin
+Basic Online for Android
+Android Development Final Project
+2 May 2020
+ */
+
+
 package edu.quinnipiac.ser210.basiconlineandroid;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;

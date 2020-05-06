@@ -1,3 +1,12 @@
+/*
+Authors: Megan Forster and Alexandra Martin
+Basic Online for Android
+Android Development Final Project
+2 May 2020
+ */
+
+
+
 package edu.quinnipiac.ser210.basiconlineandroid;
 
 import android.util.Log;
